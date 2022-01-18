@@ -1,0 +1,148 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+.container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .ring {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: -30px;
+  border: 4px solid white;
+  border-radius: 50%;
+  animation: animate 1s linear infinite;
+  border: 4px solid transparent;
+  border-top: 4px solid rgb(0, 225, 255);
+
+}
+
+@keyframes animate {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.container .ring::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 12px;
+  right: 12px;
+  border-radius: 50%;
+  background: #24ecff;
+  box-shadow: 0 0 0 5px #24ecff33,
+      0 0 0 10px #24ecff22,
+      0 0 0 20px #24ecff11,
+      0 0 20px #24ecff,
+      0 0 50px #24ecff; 
+}
+.container .ring:nth-child(2) {
+  animation: animate2 1s linear infinite;
+  animation-delay: -1s;
+  border-top: 4px solid transparent;
+  border-left: 4px solid #ff261e;
+  
+}
+
+.container .ring:nth-child(2)::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  bottom: 12px;
+  top: initial;
+  left: 12px;
+  border-radius: 50%;
+  background: #ff261e;
+  box-shadow: 0 0 0 5px #ff261e33,
+      0 0 0 10px #ff261e22,
+      0 0 0 20px #ff261e11,
+      0 0 20px #ff261e,
+      0 0 50px #ff261e;
+}
+
+@keyframes animate2 {
+  0% {
+      transform: rotate(360deg);
+  }
+
+  100% {
+      transform: rotate(0deg);
+  }
+}
+
+.container .ring:nth-child(3) {
+  position: absolute;
+  top: -66.66px;
+  animation: animate2 1s linear infinite;
+  animation-delay: -3.5s;
+  border-top: 4px solid transparent;
+  border-left: 4px solid #f9fd00;
+
+}
+.container .ring:nth-child(3)::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  bottom: 12px; 
+  top: initial;
+  left: 12px;
+  border-radius: 50%;
+  background: #f9fd00;
+  box-shadow: 0 0 0 5px #f9fd0033,
+      0 0 0 10px #f9fd0022,
+      0 0 0 20px #f9fd0011,
+      0 0 20px #f9fd00,
+      0 0 50px #f9fd00;
+}
